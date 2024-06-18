@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="PoseBench: Benchmarking the Robustness of Pose Estimation Models under Corruptions">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PoseBench: Benchmarking the Robustness of Pose Estimation Models under Corruptions</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://xymsh.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://xymsh.github.io/RICH-CAT">
+            RICH-CAT
+          </a>
+          <a class="navbar-item" href="https://github.com/xymsh/GraMMaR">
+            GraMMaR
+          </a>
+          <a class="navbar-item" href="https://github.com/ViTAE-Transformer/P3M-Net">
+            Rethink P3M
+          </a>
+          <a class="navbar-item" href="https://github.com/JizhiziLi/P3M">
+            P3M
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">PoseBench: Benchmarking the Robustness of Pose Estimation Models under Corruptions</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://xymsh.github.io/">Sihan Ma</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=9jH5v74AAAAJ">Jing Zhang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://qiongcao.github.io/">Qiong Cao</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://dr.ntu.edu.sg/cris/rp/rp02343">Dacheng Tao</a><sup>3</sup>,</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>The University of Sydney, Australia</span>
+            <span class="author-block"><sup>2</sup>JD Explore Academy, China</span>
+            <span class="author-block"><sup>3</sup>Nanyang Technological University, Singapore</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2403.15709.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=_ER157zGs1w"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/xymsh/PoseBench"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming soon)</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/xymsh/PoseBench"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data (Coming soon)</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img  src="static/images/Corruption_types_sev_levels.jpeg" width="100%" height=auto scrolling="no" frameborder="0" >
+      </img>
+      <h2 class="subtitle has-text-centered">
+        <b>PoseBench</b> evaluates the robustness of 60 models on four groups of corruptions, covering 10 types of corruptions. Each corruption consists of five severity levels.  
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Pose estimation aims to accurately identify anatomical keypoints in humans and animals using monocular images, which is crucial for various applications such as human-machine interaction, Embodied AI, and autonomous driving. While current models show promising results, they are typically trained and tested on clean data, potentially overlooking the corruption during real-world deployment and thus posing safety risks in practical scenarios. To address this issue, we introduce PoseBench, a comprehensive benchmark designed to evaluate the robustness of pose estimation models against real-world corruption. We evaluated 60 representative models, including top-down, bottom-up, heatmap-based, regression-based, and classification-based methods, across three datasets for human and animal pose estimation. Our evaluation involves 10 types of corruption in four categories: 1) blur and noise, 2) compression and color loss, 3) severe lighting, and 4) masks. Our findings reveal that state-of-the-art models are vulnerable to common real-world corruptions and exhibit distinct behaviors when tackling human and animal pose estimation tasks. To improve model robustness, we delve into various design considerations, including input resolution, pre-training datasets, backbone capacity, post-processing, and data augmentations. We hope that our benchmark will serve as a foundation for advancing research in robust pose estimation.
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<!-- Paper method -->
+<section class="section hero ">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Benchmark</h2>
+        <div class="container is-centered">
+          <img  src="static/images/robustness_on_corruptions_radar.png"   width="100%" height=auto scrolling="no" frameborder="0" >
+        </img> 
+        </div>
+      </div>
+    </div>
+    <p>Pose estimation results in terms of mRR (%) for 10 representative models on the <font style="color:blue;">COCO-C</font>, <font style="color:green;">OCHuman-C</font>, and <font style="color:red;">AP10K-C</font> datasets. <b>Corruptions</b>: #1 <tt>Motion Blur</tt>, #2 <tt>Gaussian Noise</tt>, #3 <tt>Impulse Noise</tt>, #4 <tt>Pixelate</tt>, #5 <tt>JPEG Compression</tt>, #6 <tt>Color Quant</tt>, #7 <tt>Brightness</tt>, #8 <tt>Darkness</tt>, #9 <tt>Contrast</tt>, #10 <tt>Mask</tt>.</p>
+  </div>
+</section>
+<!-- End method -->
+
+
+<!-- BibTex citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{ma2024posebench,
+      author    = {Ma, Sihan and Zhang, Jing and Cao, Qiong and Tao, Dacheng},
+      title     = {PoseBench: Benchmarking the Robustness of Pose Estimation Models under Corruptions},
+      journal   = {arXiv preprint arXiv:},
+      year      = {2024},
+    }</code></pre>
+  </div>
+</section>
+<!-- End BibTex citation -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Thanks to <a href="https://keunhong.com/">Keunhong Park</a> for the <a href="https://nerfies.github.io/">website template</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
