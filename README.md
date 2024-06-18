@@ -1,4 +1,4 @@
-# RICH-CAT
+# PoseBench
 
 This is the repository that contains source code for the [PoseBench website](https://xymsh.github.io/PoseBench).
 
