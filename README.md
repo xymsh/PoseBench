@@ -7,7 +7,7 @@ If you find PoseBench useful for your work please cite:
 @article{ma2024posebench,
   author    = {Ma, Sihan and Zhang, Jing and Cao, Qiong and Tao, Dacheng},
   title     = {PoseBench: Benchmarking the Robustness of Pose Estimation Models under Corruptions},
-  journal   = {arXiv preprint arXiv:},
+  journal   = {arXiv preprint arXiv:2406.14367},
   year      = {2024},
 }
 ```
